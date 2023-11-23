@@ -15,7 +15,7 @@ namespace DesktopPAS
         public LoginForm(String username, String password, String email)
         {
             InitializeComponent();
-
+            configComponent();
             SetPictureBoxRoundedCorners(pictureBox1, 5);
 
             label4.MouseEnter += label4_MouseEnter;
@@ -26,6 +26,10 @@ namespace DesktopPAS
             emailReg = email;
         }
 
+        private void configComponent()
+        {
+            pictureBox1.ImageLocation = "../../../Assets/Banner_Image/Login_Banner.png";
+        }
 
         private void label4_MouseEnter(object sender, EventArgs e)
         {
@@ -59,11 +63,11 @@ namespace DesktopPAS
             }
             else if(textBox1.Text == "" && textBox2.Text == "")
             {
-                DialogResult dialogResult = MessageBox.Show("Masukkan akun anda", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show("Masukkan akun anda", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Akun anda salah", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show("Akun anda salah", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
         }
 
