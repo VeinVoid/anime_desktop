@@ -47,7 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "AnimePage";
-            this.Size = new System.Drawing.Size(923, 645);
+            this.Size = new System.Drawing.Size(936, 645);
             this.ResumeLayout(false);
 
         }
