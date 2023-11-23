@@ -17,6 +17,7 @@ namespace DesktopPAS
         NewsPage newsPage = new NewsPage { Dock = DockStyle.Fill };
         AnimePage animePage = new AnimePage { Dock = DockStyle.Fill };
         ProfilePage profilePage = new ProfilePage { Dock = DockStyle.Fill };
+        
         String usernamea;
         String emaila;
         String passworda;
@@ -25,9 +26,8 @@ namespace DesktopPAS
         public Dashboard(String username, String email, String password)
         {
             InitializeComponent();
-            this.panel3.Controls.Add(newsPage);
-            this.panel4.Dock = DockStyle.Bottom;
-            panelActive = "newsPage";
+            configComponent();
+            configValue();
             usernamea = username;
             emaila = email;
             passworda = password;
@@ -35,10 +35,12 @@ namespace DesktopPAS
 
         private void search()
         {
+            AnimeSearch animeSearch = new AnimeSearch(textBox1.Text) { Dock = DockStyle.Fill };
+
             if (textBox1.Text != "")
             {
                 this.panel3.Controls.Clear();
-                this.panel3.Controls.Add(profilePage);
+                this.panel3.Controls.Add(animeSearch);
             }
             else
             {
@@ -47,7 +49,22 @@ namespace DesktopPAS
                     this.panel3.Controls.Add(newsPage);
                 else if(panelActive == "animePage")
                     this.panel3.Controls.Add(animePage);
+                else if (panelActive == "profilePage")
+                    this.panel3.Controls.Add(profilePage);
             }
+        }
+
+        private void configComponent()
+        {
+            this.panel3.Controls.Add(newsPage);
+            this.panel4.Dock = DockStyle.Bottom;
+
+            pictureBox1.ImageLocation = "../../../Assets/Icon_Image/Navbar_Alterial.png";
+        }
+
+        private void configValue()
+        {
+            panelActive = "newsPage";
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -222,7 +239,6 @@ namespace DesktopPAS
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
                search();
         }
     }

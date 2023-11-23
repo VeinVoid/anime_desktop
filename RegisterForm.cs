@@ -16,11 +16,16 @@ namespace DesktopPAS
         public RegisterForm()
         {
             InitializeComponent();
-
+            configComponent();
             SetPictureBoxRoundedCorners(pictureBox1, 5);
 
             label7.MouseEnter += label7_MouseEnter;
             label7.Click += label7_Click;
+        }
+
+        private void configComponent()
+        {
+            pictureBox1.ImageLocation = "../../../Assets/Banner_Image/Login_Banner.png";
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -82,6 +87,11 @@ namespace DesktopPAS
             LoginForm login = new LoginForm(textBox1.Text, textBox2.Text, textBox3.Text);
             login.Show();
             this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
