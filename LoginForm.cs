@@ -59,11 +59,11 @@ namespace DesktopPAS
             }
             else if(textBox1.Text == "" && textBox2.Text == "")
             {
-                DialogResult dialogResult = MessageBox.Show("Masukkan akun anda", "Validation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("Masukkan akun anda", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Akun anda salah", "Validation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("Akun anda salah", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
         }
 
